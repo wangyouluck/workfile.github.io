@@ -1,37 +1,42 @@
-## Welcome to GitHub Pages
+vuejs or element ui use problem address
 
-You can use the [editor on GitHub](https://github.com/wangyouluck/workfile.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+使用拓展运算符 ... 复制数组
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+// good
+itemsCopy = [...items]
 
-### Markdown
+// better
+function getFullName ({ firstName, lastName }) {
+  return `${firstName} ${lastName}`
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+程序化生成字符串时，请使用模板字符串
+const str = `ab${test}`
 
-# Header 1
-## Header 2
-### Header 3
+不要在非函数代码块中声明函数
+// good
+let test
+if (isUse) {
+  test = () => {
+    // do something
+  }
+}
 
-- Bulleted
-- List
+不要更改函数参数的值
+function test (opts = {}) {
+  // ...
+}
 
-1. Numbered
-2. List
+使用标准的 ES6 模块语法 import 和 export
+// better
+import { Util } from './util'
+export default Util
 
-**Bold** and _Italic_ and `Code` text
+es6数组去重的两种方式
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wangyouluck/workfile.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+1.
+let sq = ['aa','cc','bb','aa','33','bb'];
+let news = new Set(sq);
+console.log(news);
+console.log([...news]);
